@@ -1,4 +1,4 @@
-#CLASS 0
+//RESET_EnchantSettings#CLASS 0#AL RESET_EnchantSettings {#CLASS 0
 $CLASS = "Tools|Enchant|Settings"
 
 #VAR Enchant_Desired_Spell {} {} VAR
@@ -44,4 +44,4 @@ cast wildflower @Enchant_Flower_Type
 } $CLASS
 
 #CLASS $CLASS 0
-#CLASS 0
+#CLASS 0} _Enchant#CLASS 0

@@ -1,4 +1,4 @@
-#CLASS 0
+//RESET_EnchantEXE#CLASS 0#AL RESET_EnchantEXE {#CLASS 0
 $CLASS = "Tools|Enchant|EXE"
 
 #AL Enchant_Fireball {
@@ -36,4 +36,4 @@ BotOff Enchant
 } $CLASS
 
 
-#CLASS 0
+#CLASS 0} _Enchant#CLASS 0
