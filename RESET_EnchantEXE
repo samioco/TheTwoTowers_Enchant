@@ -1,0 +1,39 @@
+#CLASS 0
+$CLASS = "Tools|Enchant|EXE"
+
+#AL Enchant_Fireball {
+BotOn Enchant
+#VAR Enchant_Desired_Spell {"fireball"} {} VAR
+#VAR Enchant_Flower_Type {"red rose"} {} VAR
+SysMsg Enchanting: Fireball
+ss
+do drop keg from pack,drop all keg,draw staff,hold staff,cast wildflower @Enchant_Flower_Type
+} $CLASS
+
+#AL Enchant_Lightning {
+BotOn Enchant
+#VAR Enchant_Desired_Spell {"lightning"} {} VAR
+#VAR Enchant_Flower_Type {"yellow rose"} {} VAR
+SysMsg Enchanting: Lightning
+ss
+do drop keg from pack,drop all keg,draw staff,hold staff,cast wildflower @Enchant_Flower_Type
+} $CLASS
+
+#AL Enchant_Barkskin {
+BotOn Enchant
+#VAR Enchant_Desired_Spell {"barkskin"} {} VAR
+#VAR Enchant_Flower_Type {"green rose"} {} VAR
+SysMsg Enchanting: Barkskin
+ss
+do drop keg from pack,drop all keg,draw staff,hold staff,cast wildflower @Enchant_Flower_Type
+} $CLASS
+
+#AL Enchant_Stop {
+BotOff Enchant
+#VAR Enchant_Desired_Spell {} {} VAR
+#VAR Enchant_Flower_Type {} {} VAR
+#UNT Alarm_Enchant
+} $CLASS
+
+
+#CLASS 0
