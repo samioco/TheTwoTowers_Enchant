@@ -1,0 +1,47 @@
+#CLASS 0
+$CLASS = "Tools|Enchant|Settings"
+
+#VAR Enchant_Desired_Spell {} {} VAR
+#VAR Enchant_Flower_Type {} {} VAR
+#VAR Messages_Enchant_LowEP {"You are too exhausted to|You are too tired to enchant anything."} {} VAR
+
+#TR Enchant_Fail {You fail to enchant the item.} {
+#WAIT 200
+enchant flower with @Enchant_Desired_Spell
+} $CLASS
+
+#TR Enchant_WildflowerSuccess {creation.} {
+#CW yellow
+do get flower,enchant flower with @Enchant_Desired_Spell
+} $CLASS
+
+#TR Enchant_Success {You enchant * with the %w spell!} {
+cast wildflower @Enchant_Flower_Type
+} $CLASS
+
+#TR Enchant_AlreadyEnchanted {The * is already enchanted.} {
+cast wildflower @Enchant_Flower_Type
+} $CLASS
+
+#TR Enchant_LowEP {{@Messages_Enchant_LowEP}} {
+do 2drink keg,2drink wine,rest on
+SysMsg Waiting 30s, then attempt enchant again...
+#ALA Alarm_Enchant +30 {do get flower,enchant flower with @Enchant_Desired_Spell
+} $CLASS
+
+} $CLASS
+
+#TR Enchant_TooDrunk {^You *HIC* too drunk to *BURP* that spellllllll...} {
+SysMsg Waiting 30s, then attempt enchant again...
+#ALA Alarm_Enchant +30 {do get flower,enchant flower with @Enchant_Desired_Spell
+} $CLASS
+
+} $CLASS
+
+#TR Enchant_NeedDismount {^You could not maintain your concentration while riding.} {
+dismount
+cast wildflower @Enchant_Flower_Type
+} $CLASS
+
+#CLASS $CLASS 0
+#CLASS 0
